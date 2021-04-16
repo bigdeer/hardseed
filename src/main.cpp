@@ -10,20 +10,22 @@
 #include <limits.h>
 #include <sys/stat.h>
 #include <sys/types.h>
-#include "lib/self/Webpage.h"
+#include "lib/helper/Webpage.h"
 #include "lib/self/Aicheng.h"
 #include "lib/self/Caoliu.h"
 #include "lib/helper/Time.h"
 #include "lib/helper/CmdlineOption.h"
 #include "lib/helper/RichTxt.h"
 #include "lib/helper/Misc.h"
+#include "lib/3rd/json11/json11.hpp"
 
 
 using namespace std;
+using namespace json11;
 
 
 static const string g_softname(RichTxt::bold_on + "hardseed" + RichTxt::bold_off);
-static const string g_version("0.2.10");
+static const string g_version("0.2.14");
 static const string g_myemail("yangyangwithgnu@yeah.net");
 static const string g_myemail_color(RichTxt::bold_on + RichTxt::foreground_green + g_myemail + RichTxt::reset_all);
 static const string g_mywebspace("http://yangyangwithgnu.github.io/");
@@ -35,7 +37,7 @@ showSexyGirl (void)
     cout    << endl << 
             ".================================================================." << endl << 
           //"||                        *hardseed* vx.y.z                     ||" << endl << 
-            "||                         " << g_softname << " v" << g_version << "                      ||" << endl << 
+            "||                        " << g_softname << " v" << g_version << "                      ||" << endl << 
             "|'--------------------------------------------------------------'|" << endl << 
             "||       -- SEX IS ZERO (0), so, who wanna be the ONE (1), aha? ||" << endl << 
             "|'=============================================================='|" << endl << 
@@ -58,8 +60,8 @@ showSexyGirl (void)
             "||      ..::::                  ':::::::::::'         :'''`     ||" << endl << 
             "||   ..''''':'                    '::::::.'                     ||" << endl << 
             "|'=============================================================='|" << endl << 
-          //"||                                       yangyangwithgnu@yeah.net ||" << endl << 
-            "||                                       " << g_myemail_color << " ||" << endl << 
+          //"||                                     yangyangwithgnu@yeah.net ||" << endl << 
+            "||                                     " << g_myemail_color << " ||" << endl << 
           //"||                            http://yangyangwithgnu.github.io/ ||" << endl << 
             "||                            " << g_mywebspace_color << " ||" << endl << 
             "'================================================================'" << endl;
@@ -106,7 +108,7 @@ showHelpInfo (void)
     cout << "  --timeout-download-picture" << endl
          << "  Some pictures too big to download in few seconds. So, you should set the download picture "
          << "timeout seconds. " << endl
-         << "  The default timeout is 32 seconds." << endl;
+         << "  The default timeout is 16 seconds." << endl;
 
     cout << endl;
     cout << "  --topics-range" << endl
@@ -209,6 +211,45 @@ parseTopicsRangeArgument ( const vector<string>& topicsrange_arguments_list,
     return(true);
 }
 
+static void
+getPortalUrls (string& caoliu_portal_url, string& aicheng_portal_url)
+{
+//#ifdef CYGWIN
+    caoliu_portal_url = "http://t66y.com/";
+    aicheng_portal_url = "http://www.ac168.info/bt/";
+//#else
+    //static const string portals_file_url("https://raw.githubusercontent.com/yangyangwithgnu/hardseed/master/config/portals_list.json");
+    //Webpage portals_list_webpage(portals_file_url);
+    //if (!portals_list_webpage.isLoaded()) {
+        //cerr << "ERROR! fail to load " << portals_file_url << endl;
+        //exit(EXIT_FAILURE);
+    //}
+    //const string& portals_file_txt = portals_list_webpage.getTxt();
+
+    //string json_err_msg;
+    //const auto json_portal_urls_list = Json::parse(portals_file_txt, json_err_msg);
+    //if (!json_err_msg.empty()) {
+        //cerr << "ERROR! fail to parse the portal URLs list JSON. because "
+             //<< json_err_msg
+             //<< endl;
+        //exit(EXIT_FAILURE);
+    //}
+
+    //// caoliu 和 aicheng 论坛入口 URL 以 json 格式存放在本项目托管空间中，格式如下：
+    /*
+     * {
+     *     "caoliu": "http://cl.clme.me/",
+     *     "aicheng": "http://www.ac168.info/",
+     * }
+     */
+    //caoliu_portal_url = json_portal_urls_list["caoliu"].string_value();
+    //aicheng_portal_url = json_portal_urls_list["aicheng"].string_value();
+    //if (caoliu_portal_url.empty() || aicheng_portal_url.empty()) {
+        //cerr << "ERROR! fail to parse caoliu and aicheng portal URL. " << endl;
+        //exit(EXIT_FAILURE);
+    //}
+//#endif
+}
 
 int
 main (int argc, char* argv[])
@@ -300,7 +341,7 @@ main (int argc, char* argv[])
     // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
     // --timeout-download-picture
-    unsigned timeout_download_pic = 32; // default timeout seconds
+    unsigned timeout_download_pic = 16; // default timeout seconds
     cmdline_arguments_list = cmdline_options.getArgumentsList("--timeout-download-picture");
     if (!cmdline_arguments_list.empty()) {
         unsigned tmp = strtoul(cmdline_arguments_list[0].c_str(), nullptr, 0);
@@ -442,10 +483,14 @@ main (int argc, char* argv[])
     // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
+    // 获取 caoliu 和 aicheng 两个论坛的入口 URL
+    string caoliu_portal_url, aicheng_portal_url;
+    getPortalUrls(caoliu_portal_url, aicheng_portal_url);
 
     // download pictures and seed
     if (b_aicheng) {
-        Aicheng aicheng( aicheng_av_class,
+        Aicheng aicheng( aicheng_portal_url,
+                         aicheng_av_class,
                          proxy_addrs_list,
                          topics_range_begin, topics_range_end,
                          hate_keywords_list,
@@ -454,7 +499,8 @@ main (int argc, char* argv[])
                          timeout_download_pic,
                          path );
     } else {
-        Caoliu caoliu ( caoliu_av_class,
+        Caoliu caoliu ( caoliu_portal_url,
+                        caoliu_av_class,
                         proxy_addrs_list,
                         topics_range_begin, topics_range_end,
                         hate_keywords_list,

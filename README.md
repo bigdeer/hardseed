@@ -1,42 +1,52 @@
-#给不了你梦中情人，至少还有硬盘女神：hardseed
+<h1 align="center">给不了你梦中情人，至少还有硬盘女神：hardseed</h1>
 yangyangwithgnu@yeah.net  
 http://yangyangwithgnu.github.io/  
-2015-01-21 14:24:08
+2016-02-04 14:53:51
+
+
+##谢谢
+
+**捐赠：支付宝 yangyangwithgnu@yeah.net ，支付宝二维码（左），微信二维码（右）**
+<div align="center">
+<img src="https://raw.githubusercontent.com/yangyangwithgnu/yangyangwithgnu.github.io/master/pics/alipay_donate_qr.png" alt=""/>
+<img src="https://raw.githubusercontent.com/yangyangwithgnu/yangyangwithgnu.github.io/master/pics/wechat_donate_qr.png" alt=""/><br>
+</div>
+
+**二手书**：书，我提高开发技能的重要手段之一，随着职业生涯的发展，书籍也在不断增多，对我而言，一本书最多读三遍，再往后，几乎没有什么营养吸收，这部分书对我已基本无用，但对其他人可能仍有价值，所以，为合理利用资源，我决定低价出售这些书，希望达到两个目的：0）用售出的钱购买更多新书（没当过雷锋的朋友 (๑´ڡ`๑)）；1）你低价购得需要的书（虽然二手）。到 https://github.com/yangyangwithgnu/used_books 看看有无你钟意的。
 
 
 ##公告
 ----------------
 
-* **捐赠：支付宝 yangyangwithgnu@yeah.net 。支付宝链接 https://shenghuo.alipay.com/send/payment/fill.htm?optEmail=yangyangwithgnu@yeah.net ，支付宝二维码 $_$**
-<div align="center">
-<img src="https://raw.githubusercontent.com/yangyangwithgnu/yangyangwithgnu.github.io/master/pics/donate_qr.png" alt=""/><br>
-</div>
-
-**讨论**：任何意见建议移步 http://www.v2ex.com/t/123175  
+**讨论**：任何意见建议移步 https://www.v2ex.com/t/123175  
 
 **声明**：我本人绝对尊重各大爱的论坛，提供的资源不仅优质而且免费，我只是懒、足够的懒。请大家支持这些论坛，多用页面访问、多点击广告、多解囊捐赠。*我..在..干..嘛  @_@#*
 
 **注意**  
 + 代理是一切的先决条件。你可以使用自己的代理工具，用 hardseed 的命令行选项 --proxy 指定本地中转地址及端口，也可以用我为你预配置的 goagent 代理工具，位于 https://github.com/yangyangwithgnu/goagent_out_of_box_yang
-+ windows 用户需赋予 hardseed\bin\windows\hardseed.exe 管理员运行权限。具体请右键，选中 properties - compatibility - privilege level - run this program as an admin
 
 
 ##版本
 ----------------
 
-**[v0.2.10，修正，2014-12-7]**：caoliu 地址变更，shit :-P  
+**[v0.2.14-1，修正，2016-02-04]**：0）行了、行了，我抱歉，不知道有这么多 win 用户需要 hardseed，之前是我狭隘了，只考虑到 unix-like 用户。编译好的 win 版本程序送你，位于 bin\build_4_win.7z；1）另外，osX 下的构建方面进行了细化。新年快乐！  
+**[v0.2.14，修正，2016-01-31]**：0）忽略解析 aicheng 站务相关帖子。  
+**[v0.2.13，修正，2016-01-17]**：0）修正 caoliu 翻页的错误。  
+**[v0.2.12，优化，2015-05-26]**：0）先前 hardseed 中硬编码 aicheng 和 caoliu 论坛入口地址，地址一旦变更，每次需要重新调整代码，很是麻烦，现在我在本项目主页中放了一份配置文件 config/portals_list.json，hardseed 自动从该文件中获取最新论坛入口地址（安啦，我会及时更新的）；1）调整部分公共库代码。  
+**[v0.2.11，修正，2015-03-22]**：修正 aicheng 种子和图片解析错误的问题（别发邮件了哈，亲，邮箱都他妈快撑爆了） 。  
+**[v0.2.10，修正，2014-12-07]**：caoliu 地址变更，shit :-P  
 **[v0.2.09，修正，2014-11-30]**：caoliu 地址变更。  
 **[v0.2.08，修正，2014-10-21]**：0）仅解析主贴的图片而不再解析回帖，以避免下载无关图片；1）aicheng 论坛地址变更；2）部分用户有自己的代理工具，为缩短下载时长，将预配置的 goagent 独立成一个 github 项目。  
-**[v0.2.07，修正，2014-9-25]**：windows 禁止文件名中含有 /:\*?\\<>"| 等字符，否则将导致非法路径错误，修正 hardseed 生成的文件名中可能含有如上字符的问题。  
-**[v0.2.06，优化，2014-9-9]**：caoliu 原地址无法访问，更新地址；取消 caoliu 自拍套图最多只能下载 256 张的限制。  
-**[v0.2.05，优化，2014-8-17]**：程序功能无任何更新，仅更新代理工具 goagent 配置文件 proxy.ini：一是设置 obfuscate = 1 开启流量混淆以正确解析出可用 GGC IP，一是设置 pagespeed = 1 以提升 GAE 的下行速度。  
-**[v0.2.05，修正，2014-8-13]**：0）修正帖子部分图片 URL 未解析的问题；1）修正图片序号错误的问题；2）优化图片下载等待时长算法，不再以 --timeout-download-picture 作为绝对等待时长，而是将其作为指导值，一旦图片下载失败 hardseed 将自动计算下次重新下载所需的等待时长，同时，与“速度过低视为下载失败”的机制结合，提升图片下载等待耗时；3）升级 goagent 至 3.1.21，采用 goagent 默认 proxy.ini，而不再使用自定义 iplist （很多朋友反应采用先前我自定义 iplist 版本的 goagent 速度不理想，这是由于 GGC IP 与不同网络环境有关，我用 checkgoogleip 跑出来 GGC IP 最适合我的网络环境，不见得适合你，所以，权衡之下，还是用 goagent 自带的 GGC IP，至少这合适于大多数人）。  
-**[v0.2.04，修正，2014-8-10]**：0）由于对 % 进行 URL 转义使得部分图片的 URL 生成错误，导致图片下载失败，本版本已修正；1）剔除长年显示异常的图床网站 iceimg.com；2）引入均速过低视为下载失败的机制，持续（8s）低速（4KB/s）终止当次下载，重新向服务端发起新请求，开启新一次的下载，以缩短下载错误 URL 图片等待时长；3）修正 aicheng 帖子列表页面中帖子名解析错误的问题；4）取消单个代理服务器并行下载上限数 8 的限制。  
-**[v0.2.03，修正，2014-8-8]**：0）修正部分图片缺失扩展名的问题；1）默认下载帖子数量从 128 调整为 64；2）更换新的 GGC IP 进代理工具 goagent 的 proxy.ini 中以提升代理速度。  
-**[v0.2.02，优化，2014-8-6]**：程序无任何功能变更，仅是优化代码，合并部分通用代码至公共库、增加用于验证代理出口 IP 和伪装浏览器的 user-agent 的接口。  
-**[v0.2.01，修正，2014-7-28]**：修正临时文件未删除的错误。  
-**[v0.2.00，新增，2014-7-23]**：应 @sigmadog 需求，增加抓取 caoliu 上自拍套图（江湖人称“達蓋爾的旗幟”）的功能。  
-**[v0.1.00，修正，2014-7-21]**：caoliu 论坛增加了反机器人机制，若翻页过快则视为机器人行为，下载页面为空白页。此版本可应对它的反机器人机制。
+**[v0.2.07，修正，2014-09-25]**：windows 禁止文件名中含有 /:\*?\\<>"| 等字符，否则将导致非法路径错误，修正 hardseed 生成的文件名中可能含有如上字符的问题。  
+**[v0.2.06，优化，2014-09-09]**：caoliu 原地址无法访问，更新地址；取消 caoliu 自拍套图最多只能下载 256 张的限制。  
+**[v0.2.05，优化，2014-08-17]**：程序功能无任何更新，仅更新代理工具 goagent 配置文件 proxy.ini：一是设置 obfuscate = 1 开启流量混淆以正确解析出可用 GGC IP，一是设置 pagespeed = 1 以提升 GAE 的下行速度。  
+**[v0.2.05，修正，2014-08-13]**：0）修正帖子部分图片 URL 未解析的问题；1）修正图片序号错误的问题；2）优化图片下载等待时长算法，不再以 --timeout-download-picture 作为绝对等待时长，而是将其作为指导值，一旦图片下载失败 hardseed 将自动计算下次重新下载所需的等待时长，同时，与“速度过低视为下载失败”的机制结合，提升图片下载等待耗时；3）升级 goagent 至 3.1.21，采用 goagent 默认 proxy.ini，而不再使用自定义 iplist （很多朋友反应采用先前我自定义 iplist 版本的 goagent 速度不理想，这是由于 GGC IP 与不同网络环境有关，我用 checkgoogleip 跑出来 GGC IP 最适合我的网络环境，不见得适合你，所以，权衡之下，还是用 goagent 自带的 GGC IP，至少这合适于大多数人）。  
+**[v0.2.04，修正，2014-08-10]**：0）由于对 % 进行 URL 转义使得部分图片的 URL 生成错误，导致图片下载失败，本版本已修正；1）剔除长年显示异常的图床网站 iceimg.com；2）引入均速过低视为下载失败的机制，持续（8s）低速（4KB/s）终止当次下载，重新向服务端发起新请求，开启新一次的下载，以缩短下载错误 URL 图片等待时长；3）修正 aicheng 帖子列表页面中帖子名解析错误的问题；4）取消单个代理服务器并行下载上限数 8 的限制。  
+**[v0.2.03，修正，2014-08-08]**：0）修正部分图片缺失扩展名的问题；1）默认下载帖子数量从 128 调整为 64；2）更换新的 GGC IP 进代理工具 goagent 的 proxy.ini 中以提升代理速度。  
+**[v0.2.02，优化，2014-08-06]**：程序无任何功能变更，仅是优化代码，合并部分通用代码至公共库、增加用于验证代理出口 IP 和伪装浏览器的 user-agent 的接口。  
+**[v0.2.01，修正，2014-07-28]**：修正临时文件未删除的错误。  
+**[v0.2.00，新增，2014-07-23]**：应 @sigmadog 需求，增加抓取 caoliu 上自拍套图（江湖人称“達蓋爾的旗幟”）的功能。  
+**[v0.1.00，修正，2014-07-21]**：caoliu 论坛增加了反机器人机制，若翻页过快则视为机器人行为，下载页面为空白页。此版本可应对它的反机器人机制。
 
 
 ##演示  
@@ -94,7 +104,7 @@ The max and default number is 8.
 
 --timeout-download-picture  
 Some pictures too big to download in few seconds. So, you should set the download picture timeout seconds.   
-The default timeout is 32 seconds.  
+The default timeout is 16 seconds.  
 
 --topics-range  
 Set the range of to download topics. E.G.:
@@ -133,7 +143,7 @@ That's all. Any suggestions let me know by yangyangwithgnu@yeah.net or http://ya
 ##中文
 --------
 
-硬盘女神，你懂嘀！hardseed 是个种子下载工具，它从浓（ai）情（cheng）蜜（she）意（qu）和爱（cao）意（liu）无（she）限（qu）的地方获取女神种子、图片。  
+hardseed 希望带给你（硬盘）女神！女神的种子和图片。  
 
 ###【翻墙】  
 你知道，这一切的一切都在墙外，所以你得具备翻墙环境，hardseed 才能帮你拉女神。hardseed 支持 goagent、shadowsocks、SSH、VPN （PPTP 和 openVPN）等各类代理模式，甚至你可以同时使用多种代理以极速下载。从普及度、稳定性、高效性来看，goagent 最优。“我一小白，平时工作压力本来就大，就想看看女神轻松下，你还让我折腾代理！没人性！”，嘚，亲，咱是做服务的。我帮你配置了一份开箱即用的 goagent，位于 https://github.com/yangyangwithgnu/goagent_out_of_box_yang ，下载后，linux 用户，命令行中运行
@@ -155,7 +165,7 @@ $ git clone https://github.com/yangyangwithgnu/hardseed.git
 ###【源码安装】
 
 ####『windows』  
-这基本没 windows 用户什么事儿，除非你有 cygwin，否则你没法编译源码，没事，帮你弄好了，我的定位是牙医界的服务人员，服务很重要，二进制执行程序位于 hardseed\bin\windows\hardseed.exe。
+这基本没 windows 用户什么事儿，除非你有 cygwin，否则你没法编译源码，没事，帮你弄好了，我的定位是牙医界的服务人员，服务很重要，二进制执行程序位于 hardseed\bin\build_4_win.7z。
  
 ####『linux』
 0）唯一依赖 libcurl，请自行安装；  
@@ -168,7 +178,7 @@ $ make && make install
 ```
  
 ####『osX』
-先将 build/CMakeLists.txt 中的  
+首先，将 build/CMakeLists.txt 中的  
 ```
 TARGET_LINK_LIBRARIES(hardseed curl pthread)
 ```
@@ -176,7 +186,34 @@ TARGET_LINK_LIBRARIES(hardseed curl pthread)
 ```
 TARGET_LINK_LIBRARIES(hardseed curl pthread iconv)
 ```
-其他同 linux 构建方法。
+
+然后，将 build/CMakeLists.txt 中
+```
+## osX
+##>>>>>>>>>>>>>>>>>>>>>>
+
+#SET(CMAKE_CXX_COMPILER "g++")
+#SET(CMAKE_CXX_FLAGS "-std=c++11 -O3")
+#SET(CMAKE_BUILD_TYPE release)
+#ADD_EXECUTABLE(hardseed ${SRC_LIST})
+#TARGET_LINK_LIBRARIES(hardseed curl pthread iconv)
+#INSTALL(PROGRAMS hardseed DESTINATION /usr/bin/)
+```
+第一列的 # 删除；
+
+接着，将 build/CMakeLists.txt 中
+```
+# release
+SET(CMAKE_CXX_COMPILER "g++")
+SET(CMAKE_CXX_FLAGS "-std=c++11 -O3")
+SET(CMAKE_BUILD_TYPE release)
+ADD_EXECUTABLE(hardseed ${SRC_LIST})
+TARGET_LINK_LIBRARIES(hardseed curl pthread)
+INSTALL(PROGRAMS hardseed DESTINATION /usr/bin/)
+```
+删掉；
+
+最后，剩下步骤同 linux 构建方法。
 
 
 
@@ -184,7 +221,7 @@ TARGET_LINK_LIBRARIES(hardseed curl pthread iconv)
 **亲，听好了，运行 hardseed 前务必确保代理程序已正常运行，否则，别说女神，蚊子都碰不到。**
 
 ####『windows』  
-先进入 hardseed\bin\windows\，找到并选中 hardseed.exe，右键设置**以管理员权限运行该程序**，接着键入 alt-d 将光标定位到文件管理器的地址栏中，键入 CMD 启动命令行窗口，再在 CMD 中键入
+先进入 hardseed\bin\，解压 build_4_win.7z，选中 hardseed.exe，右键设置**以管理员权限运行该程序**，接着键入 alt-d 将光标定位到文件管理器的地址栏中，键入 CMD 启动命令行窗口，在 CMD 中键入
 ```
 X:\hardseed\bin\windows> hardseed.exe
 ```
@@ -203,7 +240,7 @@ $ hardseed --saveas-path ~/downloads --topics-range 256 --av-class aicheng_west
 
 ###【FQA】  
 
-**Q1**：为何 windows 版的可执行文件目录 hardseed\bin\windows\ 下有一堆 cyg\*.dll 文件？  
+**Q1**：为何 windows 版的可执行文件目录 build_4_win\ 下有一堆 cyg\*.dll 文件？  
 **A1**：hardseed 是用 C++ 编写的遵循 SUS（单一 unix 规范）的原生 linux 程序，理论上，在任何 unix-like（linux、BSD、osX） 系统上均可正常源码编译，唯独不支持 windows，为让 hardseed 具备跨平台能力，须借由某种工具（或环境）将 hardseed 转换成 windows 下的执行程序。cygwin 就是这种环境，我把 hardseed 源码纳入 cygwin 环境中重新编译，即可生成 windows 下的可执行程序 hardseed.exe，在这个过程中，cygwin 会加入些自己的代码和中转库到 hardseed.exe 中，cyg\*.dll 就是各类中转库。
 
 **Q2**：为何运行 windows 版的执行程序总有如下警告
@@ -228,7 +265,7 @@ Preferred POSIX equivalent is: /cygdrive/c/xxxx, CYGWIN environment variable opt
 **Q5**：如何加快下载速度？  
 **A5**：最直接会想到多线程下载，一条线程负责下载一个页面，逻辑上，线程数越多、下载速度越快，实际上，存在代理服务器和被访服务器两方面的限制：
 * 代理服务器方面的限制，代理服务器为不同用户提供代理服务，为避免相互影响，通常它会限制单个用户的流量和请求频率，所以，hardseed 在指定代理服务器上的线程数一定是有个上限；
-* 被访服务器方面到限制，你访问的论坛不会低能到不控制请求频率，举个例，正常情况你 4 秒钟可以打开 4 张 caoliu 论坛的帖子，一旦 caoliu 服务器发现你 1 秒钟打开了 32 张帖子那一定将此视为机器人行为，从而拒绝响应。
+* 被访服务器方面的限制，你访问的论坛不会低能到不控制请求频率，举个例，正常情况你 4 秒钟可以打开 4 张 caoliu 论坛的帖子，一旦 caoliu 服务器发现你 1 秒钟打开了 32 张帖子那一定将此视为机器人行为，从而拒绝响应。
 
 正由于存在代理服务器和被访服务器两方面的限制，线程数不能无限大，从我多次测试的经验来看，**单个代理服务器**访问被访服务器的并行线程数设定为 8 条最为稳定，否则容易引起代理服务器和被访服务器停服。同个时刻有大量用户在访问 caoliu 论坛，肯定远超 1 秒钟打开了 32 张帖子的频率，为何 caoliu 没对所有用户拒绝请求？显然，这些请求来自不同 IP 的电脑终端，按这个思路，如果 hardseed 若能通过多个不同 IP 访问 caoliu，对于代理服务器和被访服务器来说请求数量都变少了，那完全可以绕开 caoliu 对单个 IP 请求频率过快的限制。由于我们采用代理访问，发起访问请求的 IP 就是代理服务器的 IP，显然，只要 hardseed 支持同时使用多个代理服务器，那么一切问题就简单了。所以，我**赋予了 hardseed 多路代理的能力**。hardseed 支持 4 种代理模式：
 * goagent (STRONGLY recommended), --proxy http://127.0.0.1:8087
@@ -272,14 +309,17 @@ failure (download error from http://cl.man.lv/htm_data/2/1407/1174338.html. pict
 **A10**：几张图片下载失败无伤大雅。具体原因很多，常见如下：
 * 图床挂了，hardseed 无能为力；
 * 发帖者发布的图片 URL 有误，hardseed 无能为力；
-* 图片太大、网速太慢，hardseed 在 --timeout-download-picture 指定时间内（默认 32 秒）未下载完整，这时，你可以将 --timeout-download-picture 指定为更大的下载等待时长（如，64），但这会增加整个下载时长；
+* 图片太大、网速太慢，hardseed 在 --timeout-download-picture 指定时间内（默认 16 秒）未下载完整，这时，你可以将 --timeout-download-picture 指定为更大的下载等待时长（如，64），但这会增加整个下载时长；
 * 代理服务器限制下载，禁用其他代理只用 goagent。
 
 **Q11**：我没指定任何忽略关键字，为什么 hardseed 强制取消下载“连发, 連发, 连發, 連發, 连弹, ★㊣, 合辑, 合集, 合輯, nike, 最新の美女骑兵㊣, 精選, 精选”这类合集帖子？  
 **A11**：两方面原因。一方面，合集均是把以往的单个帖子合并一起再发布，完全重复；一方面，虽然帖子中有多部不同片子的图片，但实际上帖子中的种子只是其中一部片子的，没有意义。
 
 **Q12**：很多片子迅雷报违规资源，下载速度奇慢，如何破？  
-**A12**：迅雷通过 URI 唯一确定资源，即便用 bencode 更改种子目录内的文件名也无济于事，所以仍然用迅雷的骚年，戒爱吧。首先，你得改用 QQ 旋风，其优势有三：一是大部分迅雷报违规的资源旋风中正常，二是旋风有个网页版支持跨平台（所以 linux 下诞生了 xfdown），三是资源消耗奇低；其次，对于旋风也报违规的资源，你可以先用各大网盘（比如，115 网盘、百度网盘）离线下载，然后再用旋风从网盘中下载回本地。结合这两种方式，下载速度慢的资源，基本上，不存在了。
+**A12**：**第一**，尽可能下新片，道理很简单，越新的片子被举报违规的可能性越小，具体而言，你应该用 hardseed 抓取最新帖子的种子，并且尽可能及时下载；**第二**，借助第三方工具一定程度绕开迅雷对违规资源的限制，ThunderSuperSpeedHacker（《论逆向工程的重要性》，唉，当年多么痴迷 (°Д°)），前提你必须是迅雷会员，否则任何方法均无效。迅雷通过离线空间和高速通道两种途径为会员提速，一旦发现违规资源则关闭离线空间和高速通道两个途径，离线空间是否开启是在服务端控制，客户端的任何外力作用均无效，但是，高速通道是否开启则是在客户端控制，这就为第三方工具强制开启高速通道提供了环境，ThunderSuperSpeedHacker 可以做到。用法很简单，先退出迅雷相关进程（thunder.exe、thunderplatform.exe），再运行 ThunderSuperSpeedHacker 点击“破解”即可。那么，有了 ThunderSuperSpeedHacker 是否一定就能享受高速通道了么？不一定，ThunderSuperSpeedHacker 对迅雷版本敏感。对于迅雷 v7.9.37.4952 及后续版本，一旦 ThunderSuperSpeedHacker 介入将导致迅雷僵死。解决办法：  
+0）首先，下载老版本迅雷。有很多网站提供迅雷历史版本下载，不过，安全原则之一，尽可能从官网下载，所以，我只信任迅雷官网上的历史版本。在迅雷首页（http://www.kankan.com/ ）右上角有最新版迅雷下载地址，也就是说，要找到迅雷历史版本下载地址，只要找到迅雷官网首页某个历史快照即可，用时光机器（http://web.archive.org/web/ 墙外）很容易做到，比如，4 月 1 号的首页快照（http://web.archive.org/web/20150401032902/http://www.kankan.com/ ）对应版本 v7.9.34.4908，下载地址为 http://down.sandai.net/thunder7/Thunder_kk_7.9.34.4908Preview.exe ；  
+1）接着，防止自动升级。一旦运行迅雷，它将在后台自动强制升级至最新版，所以，你得暴力阻止其升级，删除升级相关程序（xlliveud.exe、liveudinstaller.exe、thunderliveupdate.xar）即可；  
+2）最后，使用 ThunderSuperSpeedHacker 破解违规资源高速通道限制即可。  
 
 **Q13**：hardseed 在 windows 环境下载的文件部分无法删除？  
 **A13**：hardseed 正在写文件时被 ctrl-c 强制退出，文件锁未被 cyg\*.dll 释放，而 cyg\*.dll 已加载至 CMD 进程空间，所以，请先关闭所有 CMD 窗口，尝试删除相关文件，若不行，请再开新 CMD 窗口后执行
@@ -291,10 +331,9 @@ X:\> rd /S C:\[aicheng_west][1~128]@010825\
 ```
 "" - failure (download error from http://cl.man.lv/htm_data/4/1408/1189943.html. seed error: )
 ```
-**A14**：代理工具的问题。尝试：
-* 设定 --concurrent-tasks 减少单个代理的并行下载数量；
-* 如果使用 goagent 代理，重启之；若仍存在类似问题，请更换 GGC IP，即 proxy.ini 中的 iplist。可借助 checkgoogleip 查找你网络环境下速度最快的 GGC IP。
-* 如果使用 SSH 或 shadowsocks 代理，请更换同类的其他服务器。
+**A14**：代理工具的问题。你知道，hardseed 默认采用使用 goagent 作为代理工具，一方面它算是目前使用门槛最低的代理工具，但同时，另一方面它也存在并发请求数过低的限制，一旦并发数过高，goagent 代理返回的都是空白文件，这直接导致 hardseed 抛出如上错误信息。所以，我给你两方面的建议：
+* 弃用 goagent，换用 shadowsocks。shadowsocks 轻量代理，速度非常优雅，我曾对它有过简单介绍，https://github.com/yangyangwithgnu/the_new_world_linux#3.2.4 。考虑到 goagent 的并发限制，--concurrent-tasks 默认设置为 8，现在改用 shadowsocks，你完全可以将 --concurrent-tasks 设置成 32 或者更大的数字，你会发现，下载 128 张帖子也就半分钟的事儿；
+* 如果你仍坚持使用 goagent，请 --concurrent-tasks 减小至 4 或者更小的数字。
 
 
 ##忠告
